@@ -12,6 +12,11 @@ def main():
             exit('Not a CSV file')
 
 
+def tabular(file):
+    with open(file) as f:
+        reader = csv.reader(f)
+        table = tabulate(reader, header='firstrow', tablefmt='grid')
+        return table 
 
 
 if __name__ == '__main__':
